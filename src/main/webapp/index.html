@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Payzen Web Services v5 Example</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <script type="text/javascript">
+            function sendForm(form, action) {
+                form.action = action;
+                form.submit();
+            }
+        </script>
+    </head>
+    <body>
+        <form class="form-horizontal" name="paymentForm" method="POST" action="CreatePayment">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Payzen Web Services v5 Example</legend>
+
+                <!-- OrderId input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="orderId">Order Id</label>
+                    <div class="col-md-4">
+                        <input id="orderId" name="orderId" type="text" placeholder="" class="form-control" value="TESTORDER">
+                    </div>
+                </div>
+
+                <!-- Amount input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="amount">Amount</label>  
+                    <div class="col-md-4">
+                        <input id="amount" name="amount" type="text" placeholder="" class="form-control" value="12000">
+                    </div>
+                </div>
+
+                <!-- Currency input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="currency">Currency</label>
+                    <div class="col-md-4">
+                        <input id="currency" name="currency" type="text" placeholder="" class="form-control" value="978">
+                    </div>
+                </div>
+
+                <!-- Card Number input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="cardNumber">Card Number</label>  
+                    <div class="col-md-4">
+                        <input id="cardNumber" name="cardNumber" type="text" placeholder="" class="form-control" value="4970100000000000">
+                    </div>
+                </div>
+
+                <!-- Expiration Day input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="expMonth">Expiration Month</label>
+                    <div class="col-md-4">
+                        <input id="expMonth" name="expMonth" type="text" placeholder="" class="form-control" value="10">
+                    </div>
+                </div>
+
+                <!-- Expiration Year input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="expYear">Expiration Year</label>  
+                    <div class="col-md-4">
+                        <input id="expYear" name="expYear" type="text" placeholder="" class="form-control" value="2019">
+                    </div>
+                </div>
+
+                <!-- Card Verificatin Code input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="cvvCode">Card Verification Code</label>
+                    <div class="col-md-4">
+                        <input id="cvvCode" name="cvvCode" type="text" placeholder="" class="form-control" value="123">
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="createbutton">Create Payment</label>
+                    <div class="col-md-4">
+                        <button id="createbutton" name="createbutton" class="btn btn-primary" onclick="sendForm(this.form, 'CreatePayment')">
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Create!
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="createbutton">Create 3DS Payment</label>
+                    <div class="col-md-4">
+                        <button id="createbutton" name="create3DSbutton" class="btn btn-primary" onclick="sendForm(this.form, 'Create3DSPayment')">
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Create 3DS!
+                        </button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
