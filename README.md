@@ -19,7 +19,7 @@ The configuration file is called *payzen-config.properties* and it is placed in 
 
     shopId=[shop identifier]
     shopKey=[shop private key]
-    mode=[mode TEST or PROD]
+    mode=[mode TEST or PRODUCTION]
     endpointHost=[the name of the host. Ex: secure.payzen.eu]
 
 
